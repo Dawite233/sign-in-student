@@ -6,9 +6,9 @@
                     welcome, {{student.name}}. see you later!
             </div>
             
-                <div class="alert alert-info" v-else>
+            <div class="alert alert-info" v-else>
                         GoodBye, {{student.name}}. see you later!
-                </div>
+            </div>
         </div>
     </div>
 </template>
