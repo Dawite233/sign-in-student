@@ -3,7 +3,7 @@
     <new-student-form v-on:student-added="newStudentAdded" ></new-student-form>
     <student-table v-bind:students="students" 
      v-on:student-arrived-or-left="studentArrivedOrLeft"
-     v-on:delete-student="studentDeleted"
+     v-on:delete-student="deleteStudent"
      ></student-table>
     <student-message v-bind:student="mostRecentStudent"></student-message>
     
@@ -42,7 +42,7 @@ export default {
       // Find student in array of student
       // Update presern attribute
 
-      let updateStudent = this.student.find( function(s) {
+      let updateStudent = this.students.find( function(s) {
         if (s.name === student.name && s.starID === student.starID){
           /// this is the student to update!
           return true
@@ -54,10 +54,10 @@ export default {
         this.mostRecentStudent = updateStudent
       }
     },
-    studentDeleted(student) {
+    deleteStudent(student) {
       // Filter returns a new array of all students for whom the function returns true
       this.students = this.students.filter( function(s) {
-          if(s !=student ) {
+          if(s != student ) {
             return true
           }
       })

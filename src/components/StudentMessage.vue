@@ -18,7 +18,7 @@
 export default {
     name: 'StudentMessage',
     props: {
-        student: object
+        student: Object
     }
 }
 
